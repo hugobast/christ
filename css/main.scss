@@ -1,49 +1,87 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset "utf-8";
 
-
-
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Using media queries with like this:
-// @include media-query($palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+body, html {
+  height: 100%;
+  widows: 100%;
 }
 
+.wrapper {
+  height: 100%;
+  width: 100%;
 
+  background: url(/images/background.jpg) fixed no-repeat;
+  background-size: cover;
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+  position: relative;
+
+  .logo-small {
+    width: 250px;
+    height: 25px;
+    margin: 30px 40px;
+  }
+
+  .logo-large {
+    width: 184px;
+    height: 415px;
+
+    position: absolute;
+    top: 50%; left: 50%;
+    margin-left: -92px; margin-top: -207.5px;
+  }
+
+  .player {
+    height: 55px;
+    color: white;
+    background-color: black;
+
+    position: absolute;
+    left: 0px; right: 0px; bottom: 0px;
+
+    .controls {
+      width: 265px;
+      height: 55px;
+      position: absolute;
+      right: 0px;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em;
+      }
+
+      > div {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 25px;
+      }
+
+      .back-button {
+        height: 13px; width: 18px;
+        background: url(/images/player/back-button.png);
+        background-size: cover;
+      }
+
+      .play-button {
+        height: 22px; width: 20px;
+        background: url(/images/player/play-button.png);
+        background-size: cover;
+      }
+
+      .forward-button {
+        margin-right: 35px;
+        height: 13px; width: 18px;
+        background: url(/images/player/forward-button.png);
+        background-size: cover;
+      }
+
+      .volume-button {
+        height: 15px; width: 11px;
+        background: url(/images/player/volume-button.png);
+        background-size: cover;
+      }
+    }
+  }
+}

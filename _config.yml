@@ -18,3 +18,5 @@ exclude:
   - "bower.json"
   - "node_modules"
   - "package.json"
+  - "Gruntfile.coffee"
+  - "Gemfile*"

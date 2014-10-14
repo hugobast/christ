@@ -13,6 +13,7 @@
     "tests"
   ],
   "dependencies": {
-    "howler": "~1.1.25"
+    "howler": "~1.1.25",
+    "bootstrap": "~3.2.0"
   }
 }

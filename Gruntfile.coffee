@@ -20,6 +20,27 @@ module.exports = (grunt) ->
           dest: "js/"
         }]
 
+      jquery:
+        files: [{
+          expand: true
+          cwd: "bower_components/jquery/dist/"
+          src: "jquery.min.js"
+          dest: "js/"
+        }]
+
+      bootstrap:
+        files: [{
+          expand: true
+          cwd: "bower_components/bootstrap/dist/css/"
+          src: "bootstrap.min.css"
+          dest: "css/"
+        }, {
+          expand: true
+          cwd: "bower_components/bootstrap/dist/js/"
+          src: "bootstrap.min.js"
+          dest: "js/"
+        }]
+
     exec:
       jekyll:
         cmd: "jekyll build --trace"
